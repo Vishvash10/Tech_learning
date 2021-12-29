@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Tech Learning</title>
+
+
+    <!-- Bootstrap core CSS -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Course Detail</h1>
+      <p class="lead text-muted"> {{ course.summary}}.</p>
+      <img src = " {{ course.image.url }}" width="100%" height="auto"></img>
+      <p>
+        <a href="{% url 'index' %}" class="btn btn-primary my-2">Back</a>
+      </p>
+
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% for course in courses.all %}
+
+        <div class="col-md-4">
+
+          <div class="card mb-4 shadow-sm">
+             <img class ="card-img-top" src="{{course.image.url}}">
+            <div class="card-body">
+              <p class="card-text"> {{ course.summary}}</p>
+            </div>
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+<footer class="page-footer font-small blue pt-4" style="background-color: aliceblue;">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Tech Learning</h5>
+        <blockquote><p>The great myth of our times is that technology is communication.</p></blockquote>
+        <br> <br>
+        <p>For more details click on course name.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Front-end Technology Courses</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.w3schools.com/html/">HTML-5</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/css/default.asp">CSS</a>
+          </li>
+          <li>
+            <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/js/default.asp">Java Script</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Back-end Technology Courses</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.w3schools.com/java/default.asp">Java</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/python/default.asp">Python</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/php/default.asp">PHP</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/sql/default.asp">SQL</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://www.javatpoint.com/"> TechLearning.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
